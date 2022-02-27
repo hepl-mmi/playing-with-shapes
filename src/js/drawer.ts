@@ -54,6 +54,11 @@ export function drawDiamond(ctx: CanvasRenderingContext2D, color: string, x: num
     drawRectangle(ctx, color, x, y, width, height, fill, stroke, 45);
 }
 
+export function drawCross(ctx: CanvasRenderingContext2D, color: string, x: number, y: number, width: number, height: number, fill: boolean = true, stroke: number = 2) {
+    drawRectangle(ctx, color, x, y, stroke, height, true, stroke);
+    drawRectangle(ctx, color, x, y, stroke, height, true, stroke,90);
+}
+
 export function fillCanvas(color: string, ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement): void {
     drawRectangle(ctx, color, canvas.width / 2, canvas.height / 2, canvas.width, canvas.height);
 }

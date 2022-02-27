@@ -1,4 +1,4 @@
-import {drawCircle, drawDiamond, drawRectangle, drawTriangle, fillCanvas} from "./helpers";
+import {drawCircle, drawCross, drawDiamond, drawRectangle, drawTriangle, fillCanvas} from "./drawer";
 
 function drawSwissFlag() {
     const swissCanvas: HTMLCanvasElement = document.getElementById("Swiss-flag") as HTMLCanvasElement;
@@ -8,7 +8,7 @@ function drawSwissFlag() {
 
     drawRectangle(swissCanvasContext, "red", 0, 0, swissCanvas.width, swissCanvas.height);
     drawRectangle(swissCanvasContext, "white", swissCanvas.width / 2, swissCanvas.height / 2, rect.width, rect.height);
-    drawRectangle(swissCanvasContext, "white", swissCanvas.width / 2, swissCanvas.height / 2, rect.width, rect.height, true,2,90);
+    drawRectangle(swissCanvasContext, "white", swissCanvas.width / 2, swissCanvas.height / 2, rect.width, rect.height, true, 2, 90);
 }
 
 function drawHome() {
@@ -16,86 +16,86 @@ function drawHome() {
     const homeCanvasContext: CanvasRenderingContext2D = homeCanvas.getContext("2d");
 
 
-  homeCanvasContext.lineWidth = 5;
+    homeCanvasContext.lineWidth = 5;
 
 // --- Lignes (toit et murs)
 
 // Couleur de ligne
-  homeCanvasContext.strokeStyle = "red";
+    homeCanvasContext.strokeStyle = "red";
 
 // Ouverture du chemin
-  homeCanvasContext.beginPath();
+    homeCanvasContext.beginPath();
 
 // Lignes (toit)
-  homeCanvasContext.moveTo(40, 80);
-  homeCanvasContext.lineTo(80, 40);
-  homeCanvasContext.lineTo(120, 80);
+    homeCanvasContext.moveTo(40, 80);
+    homeCanvasContext.lineTo(80, 40);
+    homeCanvasContext.lineTo(120, 80);
 
 // Lignes (murs)
-  homeCanvasContext.moveTo(60, 80);
-  homeCanvasContext.lineTo(60, 120);
-  homeCanvasContext.lineTo(100, 120);
-  homeCanvasContext.lineTo(100, 80);
+    homeCanvasContext.moveTo(60, 80);
+    homeCanvasContext.lineTo(60, 120);
+    homeCanvasContext.lineTo(100, 120);
+    homeCanvasContext.lineTo(100, 80);
 
 // --- Rectangle (porte)
-  homeCanvasContext.rect(75,100,10,20);
+    homeCanvasContext.rect(75, 100, 10, 20);
 
 // Tracé
-  homeCanvasContext.stroke();
+    homeCanvasContext.stroke();
 
 // Nouveau style
-  homeCanvasContext.strokeStyle = "turquoise";
+    homeCanvasContext.strokeStyle = "turquoise";
 
 // --- Courbes de Bézier
 
 // Nouveau chemin
-  homeCanvasContext.beginPath();
+    homeCanvasContext.beginPath();
 
-  homeCanvasContext.moveTo(20, 150);
-  homeCanvasContext.bezierCurveTo(80,130,80,180,140,150);
+    homeCanvasContext.moveTo(20, 150);
+    homeCanvasContext.bezierCurveTo(80, 130, 80, 180, 140, 150);
 
-  homeCanvasContext.moveTo(20, 170);
-  homeCanvasContext.bezierCurveTo(80,150,80,200,140,170);
+    homeCanvasContext.moveTo(20, 170);
+    homeCanvasContext.bezierCurveTo(80, 150, 80, 200, 140, 170);
 
 // Tracé
-  homeCanvasContext.stroke();
+    homeCanvasContext.stroke();
 
 // --- Arc (soleil)
-  homeCanvasContext.fillStyle = "yellow";
-  homeCanvasContext.strokeStyle = "orange";
+    homeCanvasContext.fillStyle = "yellow";
+    homeCanvasContext.strokeStyle = "orange";
 
 // Nouveau chemin
-  homeCanvasContext.beginPath();
+    homeCanvasContext.beginPath();
 
-  homeCanvasContext.arc(150,40,30,0,Math.PI*2,true);
+    homeCanvasContext.arc(150, 40, 30, 0, Math.PI * 2, true);
 
 // Tracé
-  homeCanvasContext.fill();
-  homeCanvasContext.stroke();
+    homeCanvasContext.fill();
+    homeCanvasContext.stroke();
 
 // --- Courbe de Bézier quadratique (sourire)
 
 // Nouveau chemin
-  homeCanvasContext.beginPath();
+    homeCanvasContext.beginPath();
 
-  homeCanvasContext.strokeStyle = "orange";
+    homeCanvasContext.strokeStyle = "orange";
 
-  homeCanvasContext.moveTo(130, 40);
-  homeCanvasContext.quadraticCurveTo(150,70,170,40);
+    homeCanvasContext.moveTo(130, 40);
+    homeCanvasContext.quadraticCurveTo(150, 70, 170, 40);
 
 // Tracé
-  homeCanvasContext.stroke();
+    homeCanvasContext.stroke();
 
 // --- ArcTo (arbre)
 
-  homeCanvasContext.beginPath();
-  homeCanvasContext.strokeStyle = "LimeGreen";
+    homeCanvasContext.beginPath();
+    homeCanvasContext.strokeStyle = "LimeGreen";
 
-  homeCanvasContext.moveTo(20,120);
-  homeCanvasContext.arcTo(20,30,160,120,20);
+    homeCanvasContext.moveTo(20, 120);
+    homeCanvasContext.arcTo(20, 30, 160, 120, 20);
 
 // Tracé
-  homeCanvasContext.stroke();
+    homeCanvasContext.stroke();
 
 }
 
@@ -143,7 +143,7 @@ function drawShapes() {
     const shapesCanvasContext: CanvasRenderingContext2D = shapesCanvas?.getContext("2d");
     const spacer: number = 30;
     let xPosition: number = spacer;
-    const shapes = [drawCircle, drawTriangle, drawRectangle, drawDiamond];
+    const shapes = [drawCircle, drawTriangle, drawRectangle, drawDiamond, drawCross];
 
     const colors = ["#fea200", "#01c8b5", "#02befe"]
     let randomShapePosition: number = Math.floor(Math.random() * shapes.length);

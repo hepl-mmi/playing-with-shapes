@@ -18,7 +18,7 @@ Dans le cadre de cet exercice, nous vous demandons de dessiner<canvas> des forme
 
 ## Énoncé
 
-Essayez de reproduire ces illustrations. Le fichier source se trouve [ici](src/shapes/shapes.ai). L'idée étant de découvrir l'API Canvas.
+Essayez de reproduire ces illustrations. Le fichier source se trouve [ici](src/shapes/shapes.ai). L'idée étant de découvrir l'API Canvas. Vous pouvez voir le résultat [ici](https://hepl-mmi.github.io/playing-with-shapes/). Nous vous proposons de construire une petite librairie qui vous permet de dessiner les formes qui reviennent. Par exemple, rectangle, cercle, triangles, etc.
 
 ![](src/shapes/1.svg)
 
@@ -27,5 +27,7 @@ Essayez de reproduire ces illustrations. Le fichier source se trouve [ici](src/s
 ![](src/shapes/3.svg)
 
 ![](src/shapes/4.svg)
+
+Ici, nous vous demandons de générer aléatoirement la séquence de formes ainsi que sa couleur et le fait qu'elle soit pleine ou pas.
 
 ![](src/shapes/5.svg)
